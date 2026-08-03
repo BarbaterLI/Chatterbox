@@ -1,0 +1,74 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+
+# Testing / coverage
+.pytest_cache/
+.coverage
+.coverage.*
+htmlcov/
+.tox/
+.nox/
+coverage.xml
+*.cover
+.hypothesis/
+
+# Type checkers / linters
+.mypy_cache/
+.ruff_cache/
+.pyre/
+.pytype/
+
+# IDE / editor
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Project-specific runtime artifacts
+# Checkpoint files may contain user paths / passwords; never commit
+.balcon_batch_checkpoint.json
+# Temporary WAV files used during transcoding
+*.tmp.wav
+# Generated TTS audio output
+*.mp3
+*.ogg
+*.flac
+*.wav
+# Log files
+balcon_batch_tts.log
+*.log
+
+# Local settings / presets (user-specific)
+settings.json
+presets.json
+
+# OS files
+Thumbs.db
+desktop.ini

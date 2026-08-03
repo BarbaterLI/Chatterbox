@@ -1,0 +1,51 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "balcon-batch-tts"
+version = "0.1.0"
+description = "Batch TTS GUI based on balcon.exe with PySide6, supporting all balcon parameters and multi-threading."
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [{ name = "balcon-batch-tts" }]
+keywords = ["tts", "balcon", "pyqt", "pyside6", "gui", "batch"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: End Users/Desktop",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: Microsoft :: Windows",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Multimedia :: Sound/Audio :: Speech",
+    "Topic :: Utilities",
+]
+dependencies = [
+    "PySide6>=6.5.0",
+    "pywin32>=306; platform_system=='Windows'",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0",
+    "pytest-cov>=4.0",
+]
+
+[project.scripts]
+balcon-batch-tts = "balcon_batch_tts.app:main"
+
+[tool.setuptools]
+package-dir = { "" = "src" }
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py", "bench_*.py"]
+addopts = "-v --tb=short"
+markers = [
+    "benchmark: 性能基准测试，CI 默认跳过",
+]
