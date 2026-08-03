@@ -22,6 +22,7 @@ from PySide6.QtGui import (
     QAction,
     QCloseEvent,
     QGuiApplication,
+    QIcon,
     QKeySequence,
     QMouseEvent,
     QShortcut,
@@ -568,6 +569,13 @@ class MainWindow(QMainWindow):
         super().__init__()
         self.setWindowTitle("Chatterbox")
         self.resize(1280, 800)
+        # 设置窗口图标（chatterbox.ico 位于项目根目录）
+        _ico_path = os.path.join(
+            os.path.dirname(os.path.abspath(__file__)),
+            "..", "..", "..", "chatterbox.ico",
+        )
+        if os.path.isfile(_ico_path):
+            self.setWindowIcon(QIcon(_ico_path))
 
         # 确保日志桥接（多次调用安全）
         _ensure_logging_bridge()
@@ -2870,7 +2878,7 @@ class MainWindow(QMainWindow):
             + "</code> / <code>PySide6 " + pyside_ver + "</code></p>"
             "<p><b>依赖：</b></p>" + deps_html
             + "<p><b>许可证：</b><code>" + license_text + "</code></p>"
-            "<p><b>项目主页：</b>(待发布)</p>"
+            '<p><b>项目主页：</b><a href="https://github.com/BarbaterLI/Chatterbox">https://github.com/BarbaterLI/Chatterbox</a></p>'
         )
 
     def _on_copy_balcon_path(self) -> None:
