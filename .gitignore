@@ -72,3 +72,6 @@ presets.json
 # OS files
 Thumbs.db
 desktop.ini
+
+# Large binaries (exceeds GitHub 100MB limit)
+ffmpeg/
